@@ -28,7 +28,18 @@ v = [0, 1, 2, 3, 4, 5,6]
 
 #include <iostream>
 #include <string>
+#include <cstdlib>
 using namespace std;
+
+int* vetor_aleatorio(int n, int max, int seed=99){
+    int* v = new int[n];
+    srand(seed);
+    for(int i=0; i<n-1; i++){
+        v[i] = rand() % max;
+    }
+
+    return v;
+}
 
 int pos_maior(int* v, int ini, int fim){
     int maior = ini;
@@ -48,8 +59,8 @@ void SelectionSort(int* v, int n){
 }
 
 int main(){
-    int v[] = {3, 0, 4, 6, 1, 5, 2};
-    int n = 7;
+    int n = 100;
+    int *v = vetor_aleatorio(n, n*100);
 
     printf("v[%d] = ", n);
     for(int i=0; i<n; i++) printf("%d, ", v[i]);
