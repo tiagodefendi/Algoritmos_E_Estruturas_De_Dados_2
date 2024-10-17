@@ -62,15 +62,15 @@ int main(int argc, char** argv){
     int n = atoi(argv[1]);
     int *v = vetor_aleatorio(n, n*100);
 
-    printf("Não Ordenado ->\nv[%d] = ", n);
-    for(int i=0; i<n; i++) printf("%d, ", v[i]);
-    printf("\b\b \n");
+    // printf("Não Ordenado ->\nv[%d] = ", n);
+    // for(int i=0; i<n; i++) printf("%d, ", v[i]);
+    // printf("\b\b \n\n");
 
     SelectionSort(v, n);
 
-    printf("Ordenado ->\nv[%d] = ", n);
-    for(int i=0; i<n; i++) printf("%d, ", v[i]);
-    printf("\b\b \n\n");
+    // printf("Ordenado ->\nv[%d] = ", n);
+    // for(int i=0; i<n; i++) printf("%d, ", v[i]);
+    // printf("\b\b \n\n");
 
     return 0;
 }
