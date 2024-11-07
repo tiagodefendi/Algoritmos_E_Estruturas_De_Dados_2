@@ -20,7 +20,7 @@ int k_maior(std::vector<int> &v, int k){
         return v[v.size()-k];
     }
     else {
-        return -9999999999999;
+        return -99999999;
     }
 }
 

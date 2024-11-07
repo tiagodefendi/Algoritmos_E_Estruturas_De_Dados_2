@@ -9,13 +9,23 @@
 // retorna um vetor com os elementos de v, sem duplicatas.
 // os elementos no vetor de saída não precisam preservar a ordem da entrada.
 std::vector<int> remover_duplicatas(std::vector<int> &v){
-    std::vector<int> s = v;
-    std::sort(s.begin(), s.end());
+    // std::vector<int> s = v;
+    // std::sort(s.begin(), s.end());
 
-    for(int i=1; i<s.size(); i++) {
-        if (s[i]==s[i-1]) {
-            s.erase(s.begin()+1);
-            i--;
+    // for(int i=1; i<s.size(); i++) {
+    //     if (s[i]==s[i-1]) {
+    //         s.erase(s.begin()+1);
+    //         i--;
+    //     }
+    // }
+    // std::vector<int> s = v;
+
+    std::vector<int> s;
+    std::sort(v.begin(), v.end());
+
+    for(int i=1; i<v.size(); i++) {
+        if (v[i]==v[i-1]) {
+            s.push_back(v[i]);
         }
     }
 
