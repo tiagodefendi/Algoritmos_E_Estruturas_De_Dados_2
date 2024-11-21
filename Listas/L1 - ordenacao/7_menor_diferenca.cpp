@@ -16,9 +16,19 @@ pair<int,int> menor_diferenca(vector<int> &v){
         return {-1, -1};
     }
 
+    int menor_dif = s[1]-s[0];
+    int menor_pos = 0;
+
+    for (int i=1; i<n-1; i++) {
+        int dif = s[i+1] - s[i];
+        if (menor_dif > dif){
+            menor_pos = i;
+        }
+    }
+
     vector<int> s = v;
     sort(s.begin(), s.end());
-    return {s[0], s[1]};
+    return {s[menor], s[menor+1]};
 }
 
 int main(){
