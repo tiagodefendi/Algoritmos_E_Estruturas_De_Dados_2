@@ -39,7 +39,7 @@ vector<int> uniao(vector<int> &v1, vector<int> &v2){
             i++;
         }
 
-        if (s2[i] < s1[j]){
+        else if (s2[i] < s1[j]){
             if (s2[j] != res[k]) {
                 res.push_back(s2[j]);
                 k++;
@@ -47,7 +47,7 @@ vector<int> uniao(vector<int> &v1, vector<int> &v2){
             j++;
         }
 
-        if (s1[i] == s2[j]){
+        else if (s1[i] == s2[j]){
             if (s1[i] != res[k]) {
                 res.push_back(s1[i]);
                 k++;
@@ -55,6 +55,22 @@ vector<int> uniao(vector<int> &v1, vector<int> &v2){
             i++;
             j++;
         }
+    }
+
+    while (i<s1.size()){
+        if (s1[i] != res[k]) {
+            res.push_back(s1[i]);
+            k++;
+        }
+        i++;
+    }
+
+    while (j<s2.size()){
+        if (s2[j] != res[k]) {
+            res.push_back(s2[j]);
+            k++;
+        }
+        j++;
     }
 
     return res;
