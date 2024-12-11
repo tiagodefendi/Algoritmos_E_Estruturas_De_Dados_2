@@ -6,7 +6,7 @@ não estão em arr2. Em outras palavras, sua função deve implementar a operaç
 #include <unordered_set>
 #include <vector>
 
-std::vector<int> intersecao(std::vector<int>& arr1, std::vector<int>& arr2){
+std::vector<int> diferenca(std::vector<int>& arr1, std::vector<int>& arr2) {
     std::unordered_set<int> h1;
     std::unordered_set<int> h2;
     std::vector<int> result;
