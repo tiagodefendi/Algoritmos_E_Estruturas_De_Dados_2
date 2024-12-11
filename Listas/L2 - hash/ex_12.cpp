@@ -8,7 +8,6 @@ arr2. Em outras palavras, sua função deve implementar a operação de interse�
 
 std::vector<int> intersecao(std::vector<int>& arr1, std::vector<int>& arr2){
     std::unordered_set<int> h1;
-    std::unordered_set<int> h2;
     std::vector<int> result;
 
     for(int el: arr1) {
