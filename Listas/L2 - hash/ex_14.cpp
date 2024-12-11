@@ -8,17 +8,13 @@ arr2 se todos os elementos de arr1 estão em arr2.
 
 bool ehSubconjunto(std::vector<int>& arr1, std::vector<int>& arr2) {
     std::unordered_set<int> h1;
-    std::unordered_set<int> h2;
 
     for(int el: arr1) {
         h1.insert(el);
     }
-    for(int el: arr2) {
-        h2.insert(el);
-    }
 
-    for(int el: h1) {
-        if (!h2.count(el)) {
+    for(int el: arr2) {
+        if (!h1.count(el)) {
             return false;
         }
     }
