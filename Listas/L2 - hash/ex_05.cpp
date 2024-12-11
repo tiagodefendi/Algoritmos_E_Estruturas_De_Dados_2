@@ -13,9 +13,9 @@ std::vector<int> semDuplicatas(std::vector<int>& arr) {
 
     for (int num : arr) {
         if (!vistos.count(num)) {
-            vistos.insert(num);
             resultado.push_back(num);
         }
+        vistos.insert(num);
     }
 
     return resultado;
