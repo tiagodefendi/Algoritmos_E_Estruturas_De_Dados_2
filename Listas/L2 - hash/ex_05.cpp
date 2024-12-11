@@ -8,14 +8,12 @@ Os elementos no vetor de saída precisam estar na mesma ordem que os elementos d
 #include <iostream>
 
 std::vector<int> semDuplicatas(std::vector<int>& arr) {
-    std::unordered_set<int> vistos; // guarda os numeros ja visitados
-    std::vector<int> resultado;    // vetor sem duplicatas
+    std::unordered_set<int> vistos;
+    std::vector<int> resultado;
 
     for (int num : arr) {
-        if (vistos.find(num) == vistos.end()) { // verifica se ainda não foi visto, vendo se o iterador é igual a end()
-            // marca o numero como visto
+        if (!vistos.count(num)) {
             vistos.insert(num);
-            // adiciona ao resultado
             resultado.push_back(num);
         }
     }
