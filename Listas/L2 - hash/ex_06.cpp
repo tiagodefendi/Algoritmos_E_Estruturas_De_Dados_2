@@ -13,16 +13,15 @@ as palavras que são anagramas entre si. Por exemplo, se palavras = {"ate", "eat
 #include <iostream>
 
 std::vector<std::vector<std::string>> agruparAnagramas(std::vector<std::string>& palavras) {
-    std::unordered_map<std::string, std::vector<std::string>> anagramas; // hash pra guardar os anagramas
+    std::unordered_map<std::string, std::vector<std::string>> anagramas;
 
-    for (const std::string& palavra : palavras) { // passa por todas as palavras
+    for (const std::string& palavra : palavras) {
         std::string chave = palavra;
         std::sort(chave.begin(), chave.end());
 
-        anagramas[chave].push_back(palavra); // guarda a palavra no seu grupo de anagrama
+        anagramas[chave].push_back(palavra);
     }
 
-    // transforma a hash em um vetor de vetores
     std::vector<std::vector<std::string>> resultado;
     for (const auto& par : anagramas) {
         resultado.push_back(par.second);
@@ -35,7 +34,6 @@ int main() {
     std::vector<std::string> palavras = {"ate", "eat", "tea", "bat", "tab"};
     std::vector<std::vector<std::string>> resultado = agruparAnagramas(palavras);
 
-    // Exibe os grupos de anagramas
     for (const auto& grupo : resultado) {
         std::cout << "{ ";
         for (const std::string& palavra : grupo) {
