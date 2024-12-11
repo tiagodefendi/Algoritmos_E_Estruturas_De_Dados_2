@@ -1,5 +1,5 @@
 /*
-4. Dado um vetor de inteiros arr, retorne true se arr contém algum elemento repetido, 
+4. Dado um vetor de inteiros arr, retorne true se arr contém algum elemento repetido,
 e false caso contrário.
 */
 
@@ -8,16 +8,16 @@ e false caso contrário.
 #include <iostream>
 
 bool temDuplicatas(std::vector<int>& arr) {
-    std::unordered_set<int> repetidos; // guarda os elementos visitados
+    std::unordered_set<int> repetidos;
 
     for (int num : arr) {
-        if (repetidos.find(num) != repetidos.end()) { // se o elemento existir retorna um iterador diferente de end()
-            return true; // elemento ja foi encontrado anteriormente, duplicata detectada
+        if (repetidos.count(num)) {
+            return true;
         }
-        repetidos.insert(num); // adiciona o numero atual ao conjunto
+        repetidos.insert(num);
     }
 
-    return false; // nenhuma duplicata encontrada
+    return false;
 }
 
 int main() {
