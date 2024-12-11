@@ -11,14 +11,16 @@ std::vector<int> uniao(std::vector<int>& arr1, std::vector<int>& arr2) {
     std::vector<int> result;
 
     for(int el: arr1) {
-        h.insert(el);
+        if(!h.count(el)) {
+            h.insert(el);
+            result.push_back(el);
+        }
     }
     for(int el: arr2) {
-        h.insert(el);
-    }
-
-    for(int el: h) {
-        result.push_back(el);
+        if(!h.count(el)) {
+            h.insert(el);
+            result.push_back(el);
+        }
     }
 
     return result;
