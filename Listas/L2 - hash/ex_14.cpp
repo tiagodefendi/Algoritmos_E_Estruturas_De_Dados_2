@@ -18,7 +18,7 @@ bool ehSubconjunto(std::vector<int>& arr1, std::vector<int>& arr2) {
     }
 
     for(int el: h1) {
-        if (h2.count(el)) {
+        if (!h2.count(el)) {
             return false;
         }
     }
