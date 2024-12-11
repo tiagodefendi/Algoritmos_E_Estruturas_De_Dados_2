@@ -14,12 +14,9 @@ std::vector<int> intersecao(std::vector<int>& arr1, std::vector<int>& arr2){
     for(int el: arr1) {
         h1.insert(el);
     }
-    for(int el: arr2) {
-        h2.insert(el);
-    }
 
-    for(int el: h1) {
-        if (h2.count(el)) {
+    for(int el: arr2) {
+        if (h1.count(el)) {
             result.push_back(el);
         }
     }
